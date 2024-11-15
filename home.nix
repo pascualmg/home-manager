@@ -1,4 +1,8 @@
 { config, pkgs, lib, ... }: {
+  # Home Manager
+  programs.home-manager.enable = true;
+
+
   # Desactivamos gestión de configs que manejaremos con stow
   xsession.enable = false;
   programs.bash.enable = false;
@@ -31,10 +35,17 @@
         zip # lo contrario de unzip
         gzip 
 
+        # los caparazones
+        zsh
+        bash
+        tmux
+        byobu
+
+
 
         # XMonad y dependencias
         xmonad-with-packages # que rico esto xmonad + xmobar + trayer + dmenu
-        xmobar # cada pixel vale oro
+        xmobar # cada pixel vale ro
         trayer # para que te acuerdes de lo que arrancaste aquel día
         dmenu # como el mac pero mejor y más feocd
         
@@ -127,12 +138,22 @@
         # Markdown
         pandoc
 
+        # inutils
+        bat
 
+        # a chateal
+        telegram-desktop
         #a programal
         jetbrains-toolbox
 
+        #oficina 
+        slack
+        teams-for-linux
+        telegram-desktop
+        whatsapp-for-linux
+
       ] ++ (with pkgs.python3Packages; [
-        # Python packages
+        # Python packages 🐍 
         pip
         black
         flake8
@@ -196,7 +217,7 @@
   # Git config
   programs.git = {
     enable = true;
-    userName = "passh";
+    userName = "Pascual M.G.";
     userEmail = "info@pascualmg.dev";
     extraConfig = {
       init.defaultBranch = "main";
@@ -247,8 +268,5 @@
       videos = "${config.home.homeDirectory}/Videos";
     };
   };
-
-  # Home Manager
-  programs.home-manager.enable = true;
 
 }
