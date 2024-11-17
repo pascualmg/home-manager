@@ -2,7 +2,6 @@
   # Home Manager
   programs.home-manager.enable = true;
 
-
   # Desactivamos gestión de configs que manejaremos con stow
   xsession.enable = false;
   programs.bash.enable = false;
@@ -33,27 +32,25 @@
         tree # para plantar un pino en el terminal
         unzip # lo contrario de zip
         zip # lo contrario de unzip
-        gzip 
+        gzip # para comprimir cosas y que doom funcione bien
 
         # los caparazones
-        zsh
-        bash
-        tmux
-        byobu
-
-
+        fish
+        zsh # para ser cool
+        bash # para ser normal
+        tmux # para ser un pro
+        byobu # para ser un pro con tmux
 
         # XMonad y dependencias
         xmonad-with-packages # que rico esto xmonad + xmobar + trayer + dmenu
         xmobar # cada pixel vale ro
         trayer # para que te acuerdes de lo que arrancaste aquel día
         dmenu # como el mac pero mejor y más feocd
-        
-        
+
         # GNOME extras útiles
         gnome.gnome-tweaks
         gnome.dconf-editor
-  
+
         # KDE extras útiles
         libsForQt5.kde-gtk-config
         libsForQt5.breeze-gtk
@@ -73,7 +70,7 @@
         xorg.xrandr # para configurar las pantallas
         xorg.xev # Útil para debugging de teclas
 
-            # Emacs y dependencias
+        # Emacs y dependencias
         emacs29
         nodejs_18 # para el copilot del doom .. entre otras cosas xD
         tree-sitter
