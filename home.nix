@@ -33,13 +33,12 @@
         unzip # lo contrario de zip
         zip # lo contrario de unzip
         gzip # para comprimir cosas y que doom funcione bien
+        file # para saber que eres
 
         # los caparazones
         fish
         zsh # para ser cool
         bash # para ser normal
-        tmux # para ser un pro
-        byobu # para ser un pro con tmux
 
         # XMonad y dependencias
         xmonad-with-packages # que rico esto xmonad + xmobar + trayer + dmenu
@@ -118,9 +117,7 @@
         rust-analyzer
 
         # Herramientas sistema
-        htop
         btop
-        neofetch
         pciutils
         usbutils
 
@@ -148,6 +145,7 @@
         teams-for-linux
         telegram-desktop
         whatsapp-for-linux
+        simplescreenrecorder
 
       ] ++ (with pkgs.python3Packages; [
         # Python packages 🐍 
