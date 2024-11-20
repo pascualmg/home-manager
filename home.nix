@@ -34,6 +34,9 @@
         zip # lo contrario de unzip
         gzip # para comprimir cosas y que doom funcione bien
         file # para saber que eres
+        lsof # para saber que haces
+        v4l-utils # para que la webcam funcione
+        guvcview # para verme la cara
 
         # los caparazones
         fish
@@ -146,6 +149,8 @@
         telegram-desktop
         whatsapp-for-linux
         simplescreenrecorder
+
+        openssl # para generar certificados
 
       ] ++ (with pkgs.python3Packages; [
         # Python packages 🐍 
