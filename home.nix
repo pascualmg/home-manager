@@ -217,8 +217,8 @@
   # Git config
   programs.git = {
     enable = true;
-    userName = "Pascual M.G.";
-    userEmail = "info@pascualmg.dev";
+    userName = "Pascual Muñoz Galian";
+    userEmail = "pmunozg@ces.vocento.com";
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = false;
@@ -229,6 +229,7 @@
       "*.org~"
       ".org-roam.db"
       ".DS_Store"
+      ".idea"
       "*~"
       "\\#*\\#"
     ];
