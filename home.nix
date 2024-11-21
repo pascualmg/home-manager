@@ -148,7 +148,14 @@
         teams-for-linux
         telegram-desktop
         whatsapp-for-linux
+
+        #grabaciones/reproducciones
         simplescreenrecorder
+        vlc
+        obs-studio
+
+        #musiqueta algunas veces
+        spotify
 
         openssl # para generar certificados
 
