@@ -48,6 +48,8 @@
         xmobar # cada pixel vale ro
         trayer # para que te acuerdes de lo que arrancaste aquel día
         dmenu # como el mac pero mejor y más feocd
+        xwinwrap # para poner de fondo glmatix
+        xscreensaver # ya no hay screens que salvar, pero glmatrix es la vida
 
         # GNOME extras útiles
         gnome.gnome-tweaks
@@ -59,7 +61,6 @@
         nitrogen # para cambiar el fondo y creer que soy un hacker
         picom # para que todo tenga sentido , blur , animaciones ,transparencias , ventanas redondicas, etc
         alacritty # la mejor terminal del mundo
-        xscreensaver # ya no hay screens que salvar, pero glmatrix es la vida
         xfce.xfce4-clipman-plugin # para tener un clipboard decente
         flameshot # sin esto no hay memes
         alttab # para cambiar de ventana con alt+tab , como en windoze
@@ -157,7 +158,14 @@
         #musiqueta algunas veces
         spotify
 
-        openssl # para generar certificados
+        # para generar certificados
+        openssl
+
+        #pen e testing
+        nmap # para escanear puertos y ver que hay
+        wireshark # para ver el tráfico de red
+        etherape # para ver el tráfico de red de forma gráfica
+
 
       ] ++ (with pkgs.python3Packages; [
         # Python packages 🐍 
