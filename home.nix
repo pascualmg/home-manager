@@ -37,6 +37,7 @@
         lsof # para saber que haces
         v4l-utils # para que la webcam funcione
         guvcview # para verme la cara
+        docker-compose # para componer contenedores
 
         # los caparazones
         fish
@@ -165,8 +166,11 @@
         nmap # para escanear puertos y ver que hay
         wireshark # para ver el tráfico de red
         etherape # para ver el tráfico de red de forma gráfica
+        traceroute
 
-
+        #phgp
+        gnupg
+        pinentry # Para el prompt de la passphrase
       ] ++ (with pkgs.python3Packages; [
         # Python packages 🐍 
         pip
