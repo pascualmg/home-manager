@@ -38,6 +38,7 @@
         v4l-utils # para que la webcam funcione
         guvcview # para verme la cara
         docker-compose # para componer contenedores
+        eza # ls pero con coloricos
 
         # los caparazones
         fish
@@ -167,6 +168,7 @@
         wireshark # para ver el tráfico de red
         etherape # para ver el tráfico de red de forma gráfica
         traceroute
+        tcpdump # puta vpn de mierda
 
         #phgp
         gnupg
