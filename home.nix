@@ -38,6 +38,7 @@
         v4l-utils # para que la webcam funcione
         guvcview # para verme la cara
         docker-compose # para componer contenedores
+        lazydocker # tui para docker
         eza # ls pero con coloricos
 
         # los caparazones
