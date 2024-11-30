@@ -11,6 +11,7 @@
 
   # Permitir unfree
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "qbittorrent-4.6.4" ];
 
   home = {
     stateVersion = "24.05";
@@ -40,6 +41,7 @@
         docker-compose # para componer contenedores
         lazydocker # tui para docker
         eza # ls pero con coloricos
+        filezilla
 
         # los caparazones
         fish
@@ -161,6 +163,9 @@
         #musiqueta algunas veces
         spotify
 
+        #pelis
+        qbittorrent
+        jellyfin
         # para generar certificados
         openssl
 
