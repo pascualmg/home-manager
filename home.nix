@@ -6,7 +6,6 @@
   xsession.enable = false;
   programs.bash.enable = false;
   programs.zsh.enable = false;
-  programs.alacritty.enable = false;
   programs.emacs.enable = false;
 
   # Permitir unfree
@@ -65,7 +64,6 @@
         libsForQt5.breeze-gtk
         nitrogen # para cambiar el fondo y creer que soy un hacker
         picom # para que todo tenga sentido , blur , animaciones ,transparencias , ventanas redondicas, etc
-        alacritty # la mejor terminal del mundo
         xfce.xfce4-clipman-plugin # para tener un clipboard decente
         flameshot # sin esto no hay memes
         alttab # para cambiar de ventana con alt+tab , como en windoze
