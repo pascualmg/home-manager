@@ -1,4 +1,12 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }:
+
+let
+  unstable = import (fetchTarball
+    "https://github.com/nixos/nixpkgs/archive/nixos-unstable.tar.gz") {
+      inherit (pkgs) system;
+      config = config.nixpkgs.config;
+    };
+in {
   # Home Manager
   programs.home-manager.enable = true;
 
@@ -77,7 +85,7 @@
         xorg.xev # Útil para debugging de teclas
 
         # Emacs y dependencias
-        emacs29
+        unstable.emacs29
         nodejs_18 # para el copilot del doom .. entre otras cosas xD
         tree-sitter
         cmake
@@ -147,7 +155,7 @@
         #a programal
         jetbrains-toolbox
 
-        #oficina 
+        #oficina
         slack
         teams-for-linux
         telegram-desktop
@@ -177,8 +185,12 @@
         #phgp
         gnupg
         pinentry # Para el prompt de la passphrase
+
+        #llms
+        #open-webui
+        #unstable.ollama
       ] ++ (with pkgs.python3Packages; [
-        # Python packages 🐍 
+        # Python packages 🐍
         pip
         black
         flake8
@@ -216,10 +228,10 @@
         if [ ! -d "$HOME/.config/emacs" ]; then
           echo "🚀 Instalando Doom Emacs..."
           ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.config/emacs
-          
+
           echo "📝 Clonando tu configuración personal de Doom..."
           ${pkgs.git}/bin/git clone https://github.com/pascualmg/doom $HOME/.config/doom
-          
+
           echo "⚡ Ejecutando doom install..."
           $HOME/.config/emacs/bin/doom install --force
         else
@@ -281,7 +293,20 @@
     };
   };
 
-  # XDG dirs
+  # Añade esta sección después de services
+  #systemd.user.services.ollama = {
+  #  Unit = {
+  #    Description = "Ollama AI Service";
+  #    After = [ "network.target" ];
+  #  };
+  #  Service = {
+  #    ExecStart = "${unstable.ollama}/bin/ollama serve";
+  #    Restart = "always";
+  #  };
+  #  Install = { WantedBy = [ "default.target" ]; };
+  #};
+
+  #XDG dirs
   xdg = {
     enable = true;
     userDirs = {
@@ -294,5 +319,4 @@
       videos = "${config.home.homeDirectory}/Videos";
     };
   };
-
 }
