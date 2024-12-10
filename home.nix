@@ -36,7 +36,7 @@ in {
         fd # para no perderme en el código
         wget # para descargar cosas
         curl # con esto haces un huevo frito.
-        neovim # para cuando emacs no arranca
+        unstable.neovim # para cuando emacs no arranca
         tree # para plantar un pino en el terminal
         unzip # lo contrario de zip
         zip # lo contrario de unzip
@@ -44,10 +44,10 @@ in {
         file # para saber que eres
         lsof # para saber que haces
         v4l-utils # para que la webcam funcione
-        guvcview # para verme la cara
+        unstable.guvcview # para verme la cara
         docker-compose # para componer contenedores
-        lazydocker # tui para docker
-        eza # ls pero con coloricos
+        unstable.lazydocker # tui para docker
+        unstable.eza # ls pero con coloricos
         filezilla
 
         # los caparazones
@@ -91,6 +91,12 @@ in {
         cmake
         gnumake
         graphviz
+        # para compilar la vterm o lo que sea
+        gcc
+        gnumake
+        cmake
+        libtool
+        pkg-config
 
         # Formatters y Linters
         nixfmt-classic
@@ -150,33 +156,30 @@ in {
         # inutils
         bat
 
-        # a chateal
-        telegram-desktop
         #a programal
-        jetbrains-toolbox
+        unstable.jetbrains-toolbox
 
         #oficina
-        slack
-        teams-for-linux
-        telegram-desktop
-        whatsapp-for-linux
+        unstable.slack
+        unstable.teams-for-linux
+        unstable.telegram-desktop
 
         #grabaciones/reproducciones
-        simplescreenrecorder
-        vlc
-        obs-studio
+        unstable.simplescreenrecorder
+        unstable.vlc
+        unstable.obs-studio
 
         #musiqueta algunas veces
         spotify
 
         #pelis
-        qbittorrent
-        jellyfin
+        unstable.qbittorrent
+        unstable.jellyfin
         # para generar certificados
         openssl
 
         #pen e testing
-        nmap # para escanear puertos y ver que hay
+        unstable.nmap # para escanear puertos y ver que hay
         wireshark # para ver el tráfico de red
         etherape # para ver el tráfico de red de forma gráfica
         traceroute
