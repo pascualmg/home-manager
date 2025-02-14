@@ -110,6 +110,8 @@ in {
         nodePackages.typescript-language-server
         clang-tools
 
+        mission-center
+
         # Java & PlantUML
         jdk17
         plantuml
@@ -138,7 +140,7 @@ in {
         rust-analyzer
 
         # Herramientas sistema
-        btop
+        unstable.btop
         pciutils
         usbutils
 
@@ -163,6 +165,7 @@ in {
         unstable.slack
         unstable.teams-for-linux
         unstable.telegram-desktop
+        unstable.postman
 
         #grabaciones/reproducciones
         unstable.simplescreenrecorder
@@ -190,8 +193,9 @@ in {
         pinentry # Para el prompt de la passphrase
 
         #llms
-        #open-webui
+        open-webui
         #unstable.ollama
+        duckstation # para el xenogear , sin eso no se puede programar
       ] ++ (with pkgs.python3Packages; [
         # Python packages 🐍
         pip
