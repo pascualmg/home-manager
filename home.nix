@@ -85,7 +85,7 @@ in {
         xorg.xev # Útil para debugging de teclas
 
         # Emacs y dependencias
-        unstable.emacs29
+        unstable.emacs
         nodejs_18 # para el copilot del doom .. entre otras cosas xD
         tree-sitter
         cmake
@@ -141,6 +141,7 @@ in {
 
         # Herramientas sistema
         unstable.btop
+        unstable.s-tui
         pciutils
         usbutils
 
@@ -216,7 +217,7 @@ in {
       VISUAL = "emacs";
       ORG_DIRECTORY = "$HOME/org";
       ORG_ROAM_DIRECTORY = "$HOME/org/roam";
-      PATH = "${pkgs.emacs29}/bin:${pkgs.git}/bin:$PATH";
+      PATH = "${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH";
     };
 
     # Mantenemos la activación para Doom/stow
@@ -230,7 +231,7 @@ in {
 
       # Doom install/sync
       installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        export PATH="${pkgs.emacs29}/bin:${pkgs.git}/bin:$PATH"
+        export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
 
         if [ ! -d "$HOME/.config/emacs" ]; then
           echo "🚀 Instalando Doom Emacs..."
