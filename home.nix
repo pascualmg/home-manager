@@ -194,7 +194,7 @@ in {
         pinentry # Para el prompt de la passphrase
 
         #llms
-        open-webui
+        unstable.open-webui
         #unstable.ollama
         duckstation # para el xenogear , sin eso no se puede programar
       ] ++ (with pkgs.python3Packages; [
@@ -230,23 +230,23 @@ in {
       '';
 
       # Doom install/sync
-      installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
-
-        if [ ! -d "$HOME/.config/emacs" ]; then
-          echo "🚀 Instalando Doom Emacs..."
-          ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.config/emacs
-
-          echo "📝 Clonando tu configuración personal de Doom..."
-          ${pkgs.git}/bin/git clone https://github.com/pascualmg/doom $HOME/.config/doom
-
-          echo "⚡ Ejecutando doom install..."
-          $HOME/.config/emacs/bin/doom install --force
-        else
-          echo "🔄 Sincronizando Doom Emacs..."
-          $HOME/.config/emacs/bin/doom sync
-        fi
-      '';
+      #installDoom = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      #  export PATH="${pkgs.emacs}/bin:${pkgs.git}/bin:$PATH"
+      #
+      #        if [ ! -d "$HOME/.config/emacs" ]; then
+      #          echo "🚀 Instalando Doom Emacs..."
+      #          ${pkgs.git}/bin/git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.config/emacs
+      #
+      #          echo "📝 Clonando tu configuración personal de Doom..."
+      #          ${pkgs.git}/bin/git clone https://github.com/pascualmg/doom $HOME/.config/doom
+      #
+      #          echo "⚡ Ejecutando doom install..."
+      #          $HOME/.config/emacs/bin/doom install --force
+      #        else
+      #          echo "🔄 Sincronizando Doom Emacs..."
+      #          $HOME/.config/emacs/bin/doom sync
+      #        fi
+      #      '';
 
       # Directorios base
       createDirectories = lib.hm.dag.entryAfter [ "installDoom" ] ''
