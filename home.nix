@@ -6,6 +6,11 @@ let
       inherit (pkgs) system;
       config = config.nixpkgs.config;
     };
+  master = import
+    (fetchTarball "https://github.com/nixos/nixpkgs/archive/master.tar.gz") {
+      inherit (pkgs) system;
+      config = config.nixpkgs.config;
+    };
 in {
   # Home Manager
   programs.home-manager.enable = true;
@@ -122,8 +127,8 @@ in {
         pavucontrol
 
         # Python ecosystem completo
-        python3
-        poetry
+        #python3
+        #poetry
 
         # Haskell
         ghc
@@ -133,11 +138,11 @@ in {
         stack
 
         # Rust ecosystem
-        rustc
-        cargo
-        rustfmt
-        clippy
-        rust-analyzer
+        #rustc
+        #cargo
+        #rustfmt
+        #clippy
+        #rust-analyzer
 
         # Herramientas sistema
         unstable.btop
@@ -178,7 +183,7 @@ in {
 
         #pelis
         unstable.qbittorrent
-        unstable.jellyfin
+        master.jellyfin
         # para generar certificados
         openssl
 
@@ -194,7 +199,7 @@ in {
         pinentry # Para el prompt de la passphrase
 
         #llms
-        unstable.open-webui
+        open-webui
         #unstable.ollama
         duckstation # para el xenogear , sin eso no se puede programar
       ] ++ (with pkgs.python3Packages; [
