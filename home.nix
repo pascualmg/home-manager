@@ -104,6 +104,7 @@ in {
         pkg-config
 
         # Formatters y Linters
+        jq # para formatear json
         nixfmt-classic
         shfmt
         shellcheck
@@ -145,14 +146,15 @@ in {
         #rust-analyzer
 
         # Herramientas sistema
-        unstable.btop
-        unstable.s-tui
+        master.btop
+        master.s-tui
         pciutils
         usbutils
 
         # Clipboard y utilidades
         xclip
         xsel
+        xorg.xkill
 
         # Browsers
         firefox
@@ -165,7 +167,7 @@ in {
         bat
 
         #a programal
-        unstable.jetbrains-toolbox
+        master.jetbrains-toolbox
 
         #oficina
         unstable.slack
