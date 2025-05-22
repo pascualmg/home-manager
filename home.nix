@@ -54,6 +54,9 @@ in {
         unstable.lazydocker # tui para docker
         unstable.eza # ls pero con coloricos
         filezilla
+        direnv # para cargar variables de entorno automáticamente
+
+        dysk # df pero más bonito
 
         # los caparazones
         fish
@@ -132,11 +135,11 @@ in {
         #poetry
 
         # Haskell
-        ghc
-        haskellPackages.haskell-language-server
-        haskellPackages.hoogle
-        haskellPackages.cabal-install
         stack
+        # Dependencias que Stack necesita
+        gmp
+        zlib
+        gcc
 
         # Rust ecosystem
         #rustc
