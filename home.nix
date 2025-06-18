@@ -26,7 +26,7 @@ in {
   nixpkgs.config.permittedInsecurePackages = [ "qbittorrent-4.6.4" ];
 
   home = {
-    stateVersion = "24.05";
+    stateVersion = "25.05";
     username = "passh";
     homeDirectory = "/home/passh";
 
@@ -72,8 +72,8 @@ in {
         xscreensaver # ya no hay screens que salvar, pero glmatrix es la vida
 
         # GNOME extras útiles
-        gnome.gnome-tweaks
-        gnome.dconf-editor
+        gnome-tweaks
+        dconf-editor
 
         # KDE extras útiles
         libsForQt5.kde-gtk-config
@@ -94,7 +94,7 @@ in {
 
         # Emacs y dependencias
         unstable.emacs
-        nodejs_18 # para el copilot del doom .. entre otras cosas xD
+        # nodejs_19  para el copilot del doom .. entre otras cosas xD
         tree-sitter
         cmake
         gnumake
@@ -131,11 +131,13 @@ in {
         pavucontrol
 
         # Python ecosystem completo
-        #python3
+        python3
         #poetry
 
         # Haskell
         stack
+        haskell-language-server
+
         # Dependencias que Stack necesita
         gmp
         zlib
@@ -203,6 +205,7 @@ in {
         gnupg
         pinentry # Para el prompt de la passphrase
 
+        dig
         #llms
         open-webui
         #unstable.ollama
@@ -311,19 +314,19 @@ in {
     };
   };
 
-  # Añade esta sección después de services
-  #systemd.user.services.ollama = {
-  #  Unit = {
-  #    Description = "Ollama AI Service";
-  #    After = [ "network.target" ];
-  #  };
-  #  Service = {
-  #    ExecStart = "${unstable.ollama}/bin/ollama serve";
-  #    Restart = "always";
-  #  };
-  #  Install = { WantedBy = [ "default.target" ]; };
-  #};
-
+  systemd.user.services.picom = {
+    Unit = {
+      Description = "Picom compositor";
+      After = [ "graphical-session-pre.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+    Service = {
+      ExecStart =
+        "${pkgs.picom}/bin/picom --config ${config.home.homeDirectory}/.config/picom/picom.conf";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
   #XDG dirs
   xdg = {
     enable = true;
